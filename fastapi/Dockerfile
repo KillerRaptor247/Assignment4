@@ -1,17 +1,19 @@
-# 
 FROM python:3.12
 
-# 
-WORKDIR /app
+RUN echo "Copying directory"
 
-# Add the current directory contents into the container at /app
-ADD . /app
+COPY ./app /app
 
-# 
-RUN pip install --no-cache-dir --upgrade -r requirements.txt
+RUN echo "fucking requirements"
+
+RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
+
+RUN echo "done fucking requirements"
 
 EXPOSE 8000
 
-# Docker-compose will override this command
+RUN echo "exposed 8000"
+
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
 
+RUN echo "MMMMM COMMAND"

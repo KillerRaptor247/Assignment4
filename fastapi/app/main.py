@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker
 
-DATABASE_URL = "mysql+mysqlconnector://root:supersecretpassw0rd@mysql/sakila"
+DATABASE_URL = "mysql+mysqlconnector://root:password@mysql/sakila"
 
 app = FastAPI()
 
