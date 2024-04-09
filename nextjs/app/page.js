@@ -13,11 +13,18 @@ export default function Home() {
     getCustomers();
   }, []);
 
-  //The get request
+  // //The get request
   const getCustomers = () => {
-    axios.get(`http://localhost:8000/getCustomers`).then(r => {
-      setCustomers(r.data.map())
-    })
+    try {
+      console.log('hi')
+      axios.get(`http://localhost:8000/getCustomers`, {headers: {"Access-Control-Allow-Origin": "*"}}).then(r => {
+      setCustomers(r.data)
+      })
+    }
+    catch {
+      console.log('ummmm')
+    }
+  
   }
 
   //Build the actual skeleton of the page
@@ -25,15 +32,15 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">\
       <div>
         <table>
-          {customers.map((c) => (
-            <tr key={c.customer_id}>
-              {Object.values(c).map((val) => {
-                console.log(val)
-                return (<td>{val}</td>)
-              })}
-            </tr>
-          ))}
-        </table>
+            {customers.map((c) => (
+              <tr key={c.customer_id}>
+                {Object.values(c).map((val) => {
+                  console.log(val)
+                  return (<td>{val}</td>)
+                })}
+              </tr>
+            ))}
+          </table>
       </div>
     </main>
   );

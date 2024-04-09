@@ -1,17 +1,27 @@
 from fastapi import FastAPI
 from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker
+from fastapi.middleware.cors import CORSMiddleware
 
 DATABASE_URL = "mysql+mysqlconnector://root:password@mysql/sakila"
 
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_credentials=True,
+    allow_origins=['*'],
+    allow_methods=["GET", "POST", "OPTIONS"],
+    allow_headers=["*"],
+    expose_headers=["*"]
+)
 
+@app.head('/')
 @app.get("/")
 async def root():
     return {"message": "Howdy"}
 
-
+@app.head('/getCustomers')
 @app.get("/getCustomers")
 def getCanadianCustomers():
     engine = create_engine(DATABASE_URL)
