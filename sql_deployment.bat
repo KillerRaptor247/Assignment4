@@ -1,6 +1,3 @@
-# kubectl delete pvc mysql-pv-claim
-# kubectl delete pv mysql-pv
-
 kubectl delete service mysql
 kubectl delete deployment mysql
 

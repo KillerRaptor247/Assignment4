@@ -1,4 +1,4 @@
-#minikube start --driver=docker
+minikube start --driver=docker
 docker context use default
 
 echo sql deployment starting
