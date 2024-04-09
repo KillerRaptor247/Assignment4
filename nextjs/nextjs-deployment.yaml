@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nextjs-app-deployment
+  name: frontend
 spec:
   replicas: 1 # Number of replicas (pods) to maintain
   selector:
