@@ -1,5 +1,7 @@
 # Requirements Overview
-Consider the .env and the .bats to be Assignment04-Builder, and the rest of the project contained in the rest of the folders to be Assignment04-Production. mysql contains the database, nextjs the frontend, and fastapi the backend. Each one is deployed individually in the appropriately named file. `deploy.bat` starts minikube, clones the appropriate branch from the repository, then calls each of the other deployment files in sequence. The .env file determines whether to completely rebuild the docker images for the frontend, backend, and database respectively. Additionally there is an option to delete volumes, services, and deployments for each of them respectively. Lastly there are options of whether to restart minikube, delete all pods, and which repository and branch to pull from. 
+Consider the `.env` and the .bats to be Assignment04-Builder, and the rest of the project contained in the rest of the folders to be Assignment04-Production. mysql contains the database, nextjs the frontend, and fastapi the backend. Each one is deployed individually in the appropriately named file. `deploy.bat` starts minikube, clones the appropriate branch from the repository, then calls each of the other deployment files in sequence.
+
+The `.env` file determines whether to completely rebuild the docker images for the frontend, backend, and database respectively. Additionally there is an option to delete volumes, services, and deployments for each of them respectively. Lastly there are options of whether to restart minikube, delete all pods, and which repository and branch to pull from. 
 
 # How to deploy
 Simply run `deploy.bat` file
