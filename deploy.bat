@@ -28,3 +28,7 @@ echo backend deployment complete
 echo frontend deployment starting
 call frontend_deployment.bat
 echo frontend deployment complete
+
+echo writing sql data
+call data_deployment.bat
+echo finished writing sql data

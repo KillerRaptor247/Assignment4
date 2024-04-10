@@ -1,5 +1,5 @@
 # Use the official MySQL image as the base
-FROM mysql:8.3.0
+FROM sakiladb/mysql:8
 ENV MYSQL_ROOT_PASSWORD=password
 
 # Set the working directory to /docker-entrypoint-initdb.d, which is a special directory in the MySQL image
